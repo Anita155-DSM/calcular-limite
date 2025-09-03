@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calculadora de Límites</title>
+<link rel="stylesheet" href="calculadora.css"/>
+</head><body class="calculadora">
+<header>
+  <div class="title">Calculadora de Límites</div>
+  <div class="sub"><a href="../index.html" style="color:var(--accent)">← Volver al inicio</a> • Escribí f(x) (ej: (x^2-1)/(x-1)) y el punto a.</div>
+</header>
+<div class="wrap">
+  <div class="grid2">
+    <section class="card"><div class="content">
+      <h2>Entrada</h2>
+      <label>f(x)</label>
+      <input id="fx" placeholder="ej: (x^2-1)/(x-1)" value="(x^2-1)/(x-1)"/>
+      <label>punto a</label>
+      <input id="a" type="number" step="any" value="1"/>
+      <div style="display:flex;gap:10px;margin-top:10px">
+        <button class="btn" id="btnRun">Graficar y calcular</button>
+        <button class="btn secondary" id="btnClear">Limpiar</button>
+      </div>
+      <div id="out" style="margin-top:10px"></div>
+      <table class="table"><tbody id="info"></tbody></table>
+    </div></section>
+    <section class="card"><div class="content">
+      <h2>Gráfico</h2>
+      <div id="plotWrap"><canvas id="plotCanvas"></canvas><div id="plotHint">arrastrar = mover • rueda = zoom</div></div>
+    </div></section>
+  </div>
+</div>
+<script src="app.js"></script>
+</body></html>

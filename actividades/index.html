@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Actividades con Gráfico (10)</title>
+<link rel="stylesheet" href="actividades.css"/>
+<style>
+/* ajustes mínimos para el layout estilo ficha */
+.sheet-top{margin-bottom:12px}
+.sheet-bottom{margin-top:8px}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.qbox{background:#0f172a;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px}
+.qbox h3{margin:0 0 8px;font-size:14px;color:#e5e7eb}
+.qrow{display:grid;grid-template-columns:200px 1fr;gap:8px;align-items:center;margin:6px 0}
+.qrow label{margin:0;font-size:13px;color:#94a3b8}
+.qrow input{width:100%;padding:10px;background:#0b1328;color:#e5e7eb;border:1px solid rgba(255,255,255,.12);border-radius:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.note{color:#94a3b8;font-size:13px;margin-top:8px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0f172a;border:1px solid rgba(255,255,255,.12)}
+</style>
+</head><body class="actividades">
+<header>
+  <div class="title">Actividades con Gráfico (10)</div>
+  <div class="sub"><a href="../index.html" style="color:var(--accent)">← Volver al inicio</a> • Arrastrar para mover • Rueda para hacer zoom</div>
+</header>
+<div class="wrap">
+  <section class="card sheet-top"><div class="content">
+    <h2 style="margin-bottom:8px">La gráfica de la función <span style="font-style:italic">f(x)</span> es la siguiente:</h2>
+    <div id="plotWrap"><canvas id="plotCanvas"></canvas><div id="plotHint">arrastrar = mover • rueda = zoom</div></div>
+  </div></section>
+
+  <section class="card sheet-bottom"><div class="content">
+    <h2 style="margin-bottom:8px">De acuerdo con ella, determina:</h2>
+    <div class="qgrid">
+      <div class="qbox">
+        <h3 id="hA">Punto a = ?</h3>
+        <div class="qrow"><label>lim(x→a⁻) f(x)</label><input id="ansA_L"/></div>
+        <div class="qrow"><label>lim(x→a⁺) f(x)</label><input id="ansA_R"/></div>
+        <div class="qrow"><label>lim(x→a) f(x)</label><input id="ansA_T"/></div>
+        <div class="qrow"><label>f(a)</label><input id="ansA_V"/></div>
+      </div>
+      <div class="qbox">
+        <h3 id="hB">Punto b = ?</h3>
+        <div class="qrow"><label>lim(x→b⁻) f(x)</label><input id="ansB_L"/></div>
+        <div class="qrow"><label>lim(x→b⁺) f(x)</label><input id="ansB_R"/></div>
+        <div class="qrow"><label>lim(x→b) f(x)</label><input id="ansB_T"/></div>
+        <div class="qrow"><label>f(b)</label><input id="ansB_V"/></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="btnCheck">Comprobar</button>
+      <button class="btn secondary" id="btnNext">Siguiente</button>
+      <button class="btn secondary" id="btnReset">Reiniciar todo</button>
+    </div>
+    <div id="fb" class="note"></div>
+    <div id="score" class="note">Ejercicio 1/10 — Aciertos en este: 0/8 — Global: 0 correctos</div>
+    <div class="note"><span class="badge">Pista</span> <span id="hint"></span></div>
+  </div></section>
+</div>
+<script src="app.js"></script>
+</body></html>
